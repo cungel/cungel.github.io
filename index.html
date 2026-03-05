@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lila Cunge | ML Engineer</title>
+    <style>
+        :root { --primary: #2563eb; --text: #1f2937; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; }
+        nav { background: #ffffff; padding: 1.2rem; display: flex; justify-content: center; gap: 2.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-link { cursor: pointer; font-weight: 600; color: #4b5563; text-decoration: none; transition: 0.2s; }
+        .nav-link:hover { color: var(--primary); }
+        .container { max-width: 850px; margin: 2rem auto; padding: 2.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .hidden { display: none; }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #111827; }
+        .tagline { color: var(--primary); font-weight: 500; font-size: 1.1rem; margin-bottom: 2rem; }
+        .exp-item { border-left: 4px solid #e5e7eb; padding-left: 1.5rem; margin-bottom: 2.5rem; cursor: pointer; transition: 0.3s; }
+        .exp-item:hover { border-left-color: var(--primary); background: #f9fafb; }
+        .project-card { border: 1px solid #e5e7eb; padding: 1.5rem; border-radius: 8px; margin-top: 1rem; background: #ffffff; }
+        .project-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+        .project-card-header h3 { margin: 0; }
+        .institution-logo { height: 100px; width: auto; object-fit: contain; }
+        .pipeline-img { width: 100%; border-radius: 6px; margin-top: 1.25rem; }
+        .badge { display: inline-block; background: #eff6ff; color: var(--primary); padding: 0.2rem 0.7rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 500; margin-right: 0.5rem; }
+        ul { padding-left: 1.2rem; }
+        .task-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem; }
+        .task-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.9rem 1rem; background: #f9fafb; }
+        .task-card-link { cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+        .task-card-link:hover { border-color: var(--primary); background: #eff6ff; }
+        .task-card-link:hover .task-title { color: var(--primary); }
+        .task-title { font-weight: 600; font-size: 0.875rem; color: #111827; display: flex; justify-content: space-between; }
+        .task-desc { font-size: 0.8rem; color: #6b7280; margin-top: 0.25rem; }
+        .github-link { display: inline-block; margin-top: 0.5rem; font-size: 0.75rem; color: var(--primary); text-decoration: none; font-weight: 500; }
+        .github-link:hover { text-decoration: underline; }
+        .profile-photo { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .about-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
+        .pub-item { border-left: 4px solid #e5e7eb; padding-left: 1.5rem; margin-bottom: 1.75rem; }
+        .pub-authors { font-size: 0.9rem; color: #4b5563; margin-bottom: 0.25rem; }
+        .pub-title { font-weight: 600; color: #111827; margin-bottom: 0.25rem; }
+        .pub-venue { font-size: 0.85rem; color: #6b7280; font-style: italic; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-link" onclick="showTab('about')">About</div>
+    <div class="nav-link" onclick="showTab('resume')">Resume</div>
+    <div class="nav-link" onclick="showTab('projects')">Projects</div>
+    <div class="nav-link" onclick="showTab('publications')">Publications</div>
+</nav>
+
+<div class="container">
+
+    <div id="about">
+        <div class="about-header">
+            <img src="lila_cunge.png" alt="Lila Cunge" class="profile-photo">
+            <div>
+                <h1>Lila Cunge</h1>
+                <div class="tagline">Machine Learning Engineer | Research Associate</div>
+            </div>
+        </div>
+         
+        <p>
+            I am a Machine Learning Engineer specialized in artificial intelligence
+            for medical imaging. I am currently working at UCLA as a Research Associate,
+            where I develop and advise on multiple AI research projects.
+        </p>
+
+        <p>
+            My professional experiences at UCLA and at the Grenoble Institute of
+            Neurosciences allowed me to develop a strong interest in scientific research
+            and deepen my expertise in Artificial Intelligence.
+        </p>
+
+        <p>
+            Working on applied AI projects confirmed my motivation to move beyond the
+            application of existing models and toward understanding, designing, and
+            developing new learning approaches. I therefore aim to pursue a PhD in
+            France starting in 2027 to further strengthen my theoretical foundations
+            and contribute to research in Artificial Intelligence.
+        </p>
+        <h3>Core Interests</h3>
+        <ul>
+            <li>Deep Learning and Machine Learning</li>
+            <li>Computer Vision</li>
+            <li>Applied Mathematics</li>
+        </ul>
+    </div>
+
+    <div id="resume" class="hidden">
+        <h2>Professional Experience</h2>
+        
+        <div class="exp-item">
+            <div style="color: #6b7280; font-size: 0.9rem;">Aug 2025 - Present</div>
+            <h3>ML Engineer / Research Associate</h3>
+            <p>UCLA | Los Angeles, USA</p>
+            <div class="task-grid">
+                <div class="task-card task-card-link" onclick="goToProject('ucla-p')">
+                    <div class="task-title">Segmentation Pipeline <span>↗</span></div>
+                    <div class="task-desc">Implemented a segmentation pipeline using generative AI for 3D data augmentation.</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Knowledge Graph for EHR data</div>
+                    <div class="task-desc">Participated in the development of a Knowledge Graph to process EHR data.</div>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">MRI Processing Tools</div>
+                    <div class="task-desc">Developed Python tools for the lab.</div>
+                    <a class="github-link" href="https://github.com/cungel/MRI_Processing_Tools" target="_blank"><svg height="13" width="13" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:-2px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>github.com/cungel/MRI_Processing_Tools</a>
+                </div>
+                <div class="task-card task-card-link" onclick="goToProject('ucla-db-p')">
+                    <div class="task-title">Database Construction <span>↗</span></div>
+                    <div class="task-desc">Built the lab's database from scratch.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div style="color: #6b7280; font-size: 0.9rem;">Nov 2024 - June 2025</div>
+            <h3>Research Engineer </h3>
+            <p>GIN INSERM | Grenoble, France</p>
+            <div class="task-grid" style="grid-template-columns: 1fr;">
+                <div class="task-card task-card-link" onclick="goToProject('gin-p')">
+                    <div class="task-title">Complex Bi-LSTM for MRF <span>↗</span></div>
+                    <div class="task-desc"> Implemented a Complex-Valued BiLSTM to predict quantitative maps. Improved the MRI reconstruction pipeline using non-Cartesian trajectories, NUFFT, and conjugate-gradient optimization.</div>
+                    <a class="github-link" href="https://github.com/cungel/MRF_MARVEL" target="_blank" onclick="event.stopPropagation()"><svg height="13" width="13" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:-2px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>github.com/cungel/MRF_MARVEL</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div style="color: #6b7280; font-size: 0.9rem;">Feb 2024 - Aug 2024</div>
+            <h3>Machine Learning Intern</h3>
+            <p> ICONEUS | Paris, France</p>
+            <div class="task-grid" style="grid-template-columns: 1fr;">
+                <div class="task-card task-card-link" onclick="goToProject('iconeus-p')">
+                    <div class="task-title">Independent Component Analysis for functional signals<span>↗</span></div>
+                    <div class="task-desc"> Implemented an ICA algorithm and applied it to various functional ultrasound signal processing tasks.</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Other Projects</h2>
+
+        <div class="task-grid" style="grid-template-columns: 1fr;">
+            <div class="task-card">
+                <div class="task-title">Gemini Challenge — Mentee</div>
+                <div class="task-desc">Participated in a vibe-coding challenge to develop a useful app in one week.</div>
+            </div>
+        </div>
+
+        <div class="task-grid" style="grid-template-columns: 1fr;">
+            <div class="task-card">
+                <div class="task-title">School project with the CEA</div>
+                <div class="task-desc">Work in collaboration with a team at CEA Grenoble to develop a neural network to predict blood pressure evolution from an optic metric. The implementation was successful and used by the team to write a paper.</div>
+                <a class="github-link" href="https://ieeexplore.ieee.org/abstract/document/10596901" target="_blank"><svg height="13" width="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>ieeexplore.ieee.org — Published paper</a>
+            </div>
+        </div>
+
+        <h2>Education</h2>
+        <div class="exp-item">
+            <div style="color: #6b7280; font-size: 0.9rem;">Sep 2020 - Sep 2024</div>
+            <h3>Engineering School - Medical Imaging</h3>
+            <p>PHELMA | Grenoble, France</p>
+            <div class="task-grid" style="grid-template-columns: 1fr;">
+                <div class="task-card">
+                    <div class="task-title">Biomedical Engineering — Medical Imaging</div>
+                    <div class="task-desc">Relevant Coursework: Deep Learning, Machine Learning, Numerical Methods, Applied Mathematics, Statistics, Linear Algebra, Image Processing, Digital Signal Processing, Python, C/C++, SQL.</div>
+                    <a class="github-link" href="https://phelma.grenoble-inp.fr/fr/formation/ingenieur-de-grenoble-inp-phelma-filiere-biomedical-engineering#page-presentation" target="_blank">View program ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div style="color: #6b7280; font-size: 0.9rem;">Sep 2022 - Sep 2023</div>
+            <h3>Management School</h3>
+            <p>GEM | Grenoble, France</p>
+            <div class="task-grid" style="grid-template-columns: 1fr;">
+                <div class="task-card">
+                    <div class="task-title">Double degree in Management</div>
+                    <div class="task-desc">Focus on tech strategy and innovation management.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <h3>Online Certifications</h3>
+            <div class="task-grid">
+                <div class="task-card">
+                    <div class="task-title">Deep Learning Specialization</div>
+                    <div class="task-desc">Coursera: Andrew Ng. Convolutional Neural Networks for image recognition tasks.</div>
+                    <a class="github-link" href="https://www.coursera.org/account/accomplishments/verify/F6XCTEALV0JC" target="_blank">View certificate ↗</a>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Amazon Web Services</div>
+                    <div class="task-desc">Coursera: Introduction to Information Technology and AWS Cloud.</div>
+                    <a class="github-link" href="https://www.coursera.org/account/accomplishments/verify/6JT6HRFS0HCN" target="_blank">View certificate ↗</a>
+                </div>
+                <div class="task-card">
+                    <div class="task-title">Amazon Web Services</div>
+                    <div class="task-desc">Coursera: AWS, Cloud Technical Essentials</div>
+                    <a class="github-link" href="https://www.coursera.org/account/accomplishments/verify/EJ71JH4FH8RH" target="_blank">View certificate ↗</a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- #resume -->
+
+    <div id="projects" class="hidden">
+        <h2>Technical Projects</h2>
+        
+        <div id="ucla-p" class="project-card">
+            <div class="project-card-header">
+                <h3>Segmentation Pipeline - UCLA</h3>
+                <img src="uclah_logo.png" alt="UCLA" class="institution-logo">
+            </div>
+            <p>Single Ventricle Physiology (SVP) is a rare congenital heart disease in which patients have only one functional cardiac ventricle. The scarcity of available data and the unusual anatomy compared to healthy hearts make the development of deep learning segmentation methods particularly challenging.</p>
+            <p>This project aims to develop a robust cardiac MRI segmentation framework designed for SVP patients while remaining generalizable to healthy and other CHD populations. To address data limitations, we first build a data augmentation pipeline capable of generating realistic 3D synthetic SVP anatomies across multiple subtypes, along with corresponding CMR images using generative models.</p>
+            <p>We modify a segmentation model to incorporate the diagnosis in order to guide the algorithm.</p>
+            <p>The ultimate goal is to deploy this pipeline on large electronic health record (EHR) cohorts to automatically extract radiomic features and enable large-scale quantitative studies of congenital heart disease outcomes. The project will result in a scientific publication.</p>
+            <span class="badge">Segmentation</span> <span class="badge">GAN</span> <span class="badge">Data augmentation</span>
+        </div>
+
+        <div id="ucla-db-p" class="project-card">
+            <div class="project-card-header">
+                <h3>Clinical Database Construction - UCLA</h3>
+                <img src="uclah_logo.png" alt="UCLA" class="institution-logo">
+            </div>    
+            <p>Our lab has been conducting extensive acquisitions over the past few years to support longitudinal studies. As a result, a large amount of data has accumulated, making it essential to ensure efficient use and maintain correctness.</p>
+            <p>The aim of the project is to develop a database based on image acquisitions that is useful for both clinicians, who manage the clinical aspects, and engineers and data scientists, who work on image analysis and acquisition.</p>
+            <p>The first step was to organize all folders in a centralized location following a structured and uniform architecture, which was automated using Bash scripts. We then created different Excel tables to organize information by patient, by acquisition, and by MRI sequence. Patient information is entered manually by clinicians, while information about acquisitions is updated automatically every two weeks using a Python script that reads DICOM headers. Quality control and backup to cold storage are also performed biweekly overnight.</p>
+            <p>The next phase of the project is to develop a SQL backend to ensure database consistency and provide easy access to filtered datasets.</p>
+            <span class="badge">Data Engineering</span> <span class="badge">Python</span> <span class="badge">Bash</span>
+        </div>
+
+        <div id="gin-p" class="project-card">
+            <div class="project-card-header">
+                <h3>Complex Bi-LSTM for MRF - GIN</h3>
+                <img src="gin_logo.png.jpeg" alt="GIN INSERM" class="institution-logo">
+            </div>
+            <p>The Magnetic Resonance Fingerprinting (MRF) approach aims to estimate multiple MR or physiological parameters simultaneously, but achieving realistic parameter estimation requires careful handling of computation time and signal complexity. To address this, the lab developed MARVEL, a bi-LSTM model capable of predicting parameters directly from the MR signal.</p>
+            <p>My work was two-fold: first, integrating phase information into the model through a parallel bi-LSTM to improve prediction accuracy and robustness; then, evaluating the models on undersampled acquisitions to reduce acquisition time. This involved conducting retrospective studies on fully sampled k-space data, artificially undersampling along specific trajectories using NUFFT, and reconstructing the data with CG-SENSE.</p>
+            <p>Currently, we are testing both the reconstruction method and MARVEL prospectively on new undersampled acquisitions to validate performance in real conditions. This work was presented at ISMRM 2025 through a Power Pitch and poster, and a manuscript is in preparation.</p>
+            <img src="MARVEL_pipeline.png" alt="MARVEL Pipeline" class="pipeline-img">
+            <span class="badge">LSTM</span> <span class="badge">Complex-Valued Signals</span> <span class="badge">MRI</span>
+
+        </div>
+
+        <div id="iconeus-p" class="project-card">
+            <div class="project-card-header">
+                <h3>Functional ultrasound processing using ICA</h3>
+                <img src="iconeus_logo.png" alt="ICONEUS" class="institution-logo" style="height: 40px;">
+            </div>
+            <p>Independent Component Analysis (ICA) can be used to separate independent signal sources. It has been widely applied in fMRI to isolate brain signals and identify functional brain regions along with their associated temporal activity. The objective of my internship was to evaluate whether this approach could also be applied to functional ultrasound (fUS) data.</p>
+            <p>First, I implemented the FastICA algorithm and optimized its parameters. I then applied the method to several tasks. On the one hand, ICA was used for denoising by identifying and removing components corresponding to Gaussian noise. On the other hand, it was used to analyze functional connectivity, both at the individual subject level and between two groups of mice receiving different pharmacological treatments, by studying changes in connectivity patterns.</p>
+            <p>The results demonstrate that ICA is well suited for fUS data, both for denoising and for functional connectivity analysis.</p>
+            <span class="badge">ICA</span> <span class="badge">Signal Processing</span> <span class="badge">Statistics</span>
+        </div>
+    </div>
+
+    <div id="publications" class="hidden">
+        <h2>Scientific Contributions</h2>
+
+        <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; color: #374151;">Journal Articles</h3>
+
+        <div class="pub-item">
+            <div class="pub-authors">Thomas Coudert, Maité Marcal, Aurélien Delphin, Antoine Barrier, <strong>Lila Cunge</strong>, Loïc Legris, Jan M. Warnking, Benjamin Lemasson, Emmanuel L. Barbier, Thomas Christen</div>
+            <div class="pub-title">Fast MR signal simulations of microvascular and diffusion contributions using histogram-based approximation and recurrent neural networks</div>
+            <div class="pub-venue">Magnetic Resonance in Medicine, 2025</div>
+            <a class="github-link" href="https://doi.org/10.1002/mrm.30629" target="_blank">doi.org/10.1002/mrm.30629 ↗</a>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-authors"><strong>Lila Cunge</strong>, Antoine Barrier, Thomas Coudert, Thomas Christen</div>
+            <div class="pub-title">Bi-LSTMs complex neural network for Contrast-free Blood Volume, Microvascular Properties, and Relaxometry mapping: initial tests in volunteers and stroke patients</div>
+            <div class="pub-venue">Manuscript in preparation</div>
+        </div>
+
+        <div class="pub-item">
+            <div class="pub-authors">Hang Xu, <strong>Lila Cunge</strong>, Siyan Chen, Zhengyang Ming, Majid Husain, Pierangelo Renella, Gentian Lluri, Glen Van Arsdell, J Paul Finn, William Hsu, Kim-Lien Nguyen</div>
+            <div class="pub-title">Modeling Longitudinal Congenital Heart Disease Trajectories with Knowledge Graphs: A Case Study</div>
+            <div class="pub-venue">Manuscript in preparation</div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; color: #374151;">Conference Presentations</h3>
+
+        <div class="pub-item">
+            <div class="pub-authors">Antoine Barrier, <strong>Lila Cunge</strong>, Thomas Coudert, Aurélien Delphin, Loïc Legris, Geoffroy Oudoumanessah, Laurent Lamalle, Florence Forbes, Mariya Doneva, Benjamin Lemasson, Emmanuel L. Barbier, Thomas Christen</div>
+            <div class="pub-title">MARVEL MRF for Contrast-free Blood Volume, Microvascular Properties, and Relaxometry Mapping: Initial Tests in Volunteers and Stroke Patients</div>
+            <div class="pub-venue">ISMRM 2025 — Power Pitch & Digital Poster</div>
+        </div>
+    </div>
+</div> <!-- .container -->
+
+<script>
+    function showTab(tabId) {
+        document.getElementById('about').classList.add('hidden');
+        document.getElementById('resume').classList.add('hidden');
+        document.getElementById('projects').classList.add('hidden');
+        document.getElementById('publications').classList.add('hidden');
+        document.getElementById(tabId).classList.remove('hidden');
+        window.scrollTo(0, 0);
+    }
+
+    function goToProject(projectId) {
+        showTab('projects');
+        setTimeout(() => {
+            const element = document.getElementById(projectId);
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            element.style.borderColor = "#2563eb";
+            element.style.boxShadow = "0 0 15px rgba(37,99,235,0.1)";
+        }, 150);
+    }
+</script>
+
+</body>
+</html>

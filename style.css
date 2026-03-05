@@ -1,0 +1,158 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+nav {
+    background: #2c3e50;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.tab-content {
+    display: none;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.active { display: block; }
+
+.resume-item {
+    border-left: 3px solid #3498db;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.resume-item:hover {
+    background: #f0f7ff;
+    transform: translateX(5px);
+}
+
+.date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+.header-profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.header-text h1 {
+    margin: 0;
+}
+
+.tagline {
+    color: #3498db;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Container style */
+.exp-item {
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+}
+
+/* Hover effect */
+.exp-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Date style */
+.exp-item > div:first-child {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Title */
+.exp-item h3 {
+    margin: 0 0 5px 0;
+    color: #111827;
+}
+
+/* Company / Location */
+.exp-item p:first-of-type {
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 12px;
+}
+
+/* Bullets as links */
+.bullet-link {
+    position: relative;
+    cursor: pointer;
+    color: #2563eb;
+    font-weight: 500;
+    margin-bottom: 6px;
+    transition: 0.2s;
+}
+
+/* Arrow effect */
+.bullet-link::after {
+    content: "↗";
+    margin-left: 5px;
+    font-size: 0.85em;
+    transition: transform 0.2s;
+}
+
+/* Hover arrow animation */
+.bullet-link:hover::after {
+    transform: translateX(3px);
+}
+
+/* Hover text effect */
+.bullet-link:hover {
+    color: #1e40af;
+}
